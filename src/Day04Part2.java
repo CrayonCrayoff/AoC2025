@@ -2,7 +2,7 @@ import java.util.List;
 
 public class Day04Part2 {
     public static void main(String[] args) {
-        List<String> inputLines = FileReader.readLines("inputData/day04input.txt");
+        List<String> inputLines = FileReader.readLines("day04input.txt");
 
         char[][] grid = new char[inputLines.size()][inputLines.get(0).length()];
         for (int i = 0; i < inputLines.size(); i++) {

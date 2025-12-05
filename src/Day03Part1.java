@@ -2,7 +2,7 @@ import java.util.List;
 
 public class Day03Part1 {
     public static void main(String[] args) {
-        List<String> inputLines = FileReader.readLines("inputData/day03input.txt");
+        List<String> inputLines = FileReader.readLines("day03input.txt");
 
         long output = 0;
 

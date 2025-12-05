@@ -9,7 +9,7 @@ public class FileReader {
     public static List<String> readLines(String fileName) {
         List<String> inputLines = new ArrayList<>();
 
-        File inputFile = new File(fileName);
+        File inputFile = new File("inputData/" + fileName);
 
         try (Scanner scanner = new Scanner(inputFile)) {
             while (scanner.hasNextLine()) {

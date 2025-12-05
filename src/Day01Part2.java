@@ -2,7 +2,7 @@ import java.util.List;
 
 public class Day01Part2 {
     public static void main(String[] args) {
-        List<String> lines = FileReader.readLines("inputData/day01input.txt");
+        List<String> lines = FileReader.readLines("day01input.txt");
 
         int currentValue = 50;
         int zeroCount = 0;

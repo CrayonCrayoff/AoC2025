@@ -2,7 +2,7 @@ import java.util.List;
 
 public class Day02Part2 {
     public static void main(String[] args) {
-        List<String> inputLine = FileReader.readLines("inputData/day02input.txt");
+        List<String> inputLine = FileReader.readLines("day02input.txt");
 
         String[] ranges = inputLine.get(0).split(",");
         long output = 0L;
