@@ -1,11 +1,14 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class Day07Part1 {
+public class Day07Part2 {
+    static long[][] memo;
+
     public static void main(String[] args) {
         List<String> inputLines = FileReader.readLines("day07input.txt");
         List<char[]> grid = new ArrayList<>();
         for (String line : inputLines) grid.add(line.toCharArray());
+        memo = new long[grid.size()][grid.get(0).length];
 
         int startColIdx = inputLines.get(0).indexOf('S');
 
@@ -13,16 +16,17 @@ public class Day07Part1 {
     }
 
     public static long traverseAndCount(int row, int col, List<char[]> grid) {
-        if (row >= grid.size() || grid.get(row)[col] == '|') {
-            return 0;
+        if (row >= grid.size()) {
+            return 1;
         }
 
+        if (memo[row][col] != 0) return memo[row][col];
+
         if (grid.get(row)[col] == '.') {
-            grid.get(row)[col] = '|';
             return traverseAndCount(row + 1, col, grid);
         }
 
-        return 1 + traverseAndCount(row, col + 1, grid) + traverseAndCount(row, col - 1, grid);
-
+        memo[row][col] = traverseAndCount(row, col + 1, grid) + traverseAndCount(row, col - 1, grid);
+        return memo[row][col];
     }
 }
